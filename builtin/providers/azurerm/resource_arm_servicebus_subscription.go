@@ -101,11 +101,11 @@ func resourceArmServiceBusSubscriptionCreate(d *schema.ResourceData, meta interf
 	name := d.Get("name").(string)
 	topicName := d.Get("topic_name").(string)
 	namespaceName := d.Get("namespace_name").(string)
-	location := d.Get("location").(string)
+	//location := d.Get("location").(string)
 	resGroup := d.Get("resource_group_name").(string)
 
 	parameters := servicebus.SubscriptionCreateOrUpdateParameters{
-		Location:               &location,
+		//Location:               &location,
 		SubscriptionProperties: &servicebus.SubscriptionProperties{},
 	}
 
@@ -174,7 +174,7 @@ func resourceArmServiceBusSubscriptionRead(d *schema.ResourceData, meta interfac
 	d.Set("resource_group_name", resGroup)
 	d.Set("namespace_name", namespaceName)
 	d.Set("topic_name", topicName)
-	d.Set("location", azureRMNormalizeLocation(*resp.Location))
+	//d.Set("location", azureRMNormalizeLocation(*resp.Location))
 
 	props := resp.SubscriptionProperties
 	d.Set("auto_delete_on_idle", props.AutoDeleteOnIdle)

@@ -95,7 +95,7 @@ func resourceArmEventHubAuthorizationRuleCreateUpdate(d *schema.ResourceData, me
 	name := d.Get("name").(string)
 	namespaceName := d.Get("namespace_name").(string)
 	eventHubName := d.Get("eventhub_name").(string)
-	location := d.Get("location").(string)
+	//location := d.Get("location").(string)
 	resGroup := d.Get("resource_group_name").(string)
 
 	rights, err := expandEventHubAuthorizationRuleAccessRights(d)
@@ -104,7 +104,7 @@ func resourceArmEventHubAuthorizationRuleCreateUpdate(d *schema.ResourceData, me
 	}
 
 	parameters := eventhub.SharedAccessAuthorizationRule{
-		Name:     &name,
+		Name: &name,
 		SharedAccessAuthorizationRuleProperties: &eventhub.SharedAccessAuthorizationRuleProperties{
 			Rights: rights,
 		},

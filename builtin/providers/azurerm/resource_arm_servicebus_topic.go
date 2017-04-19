@@ -109,8 +109,8 @@ func resourceArmServiceBusTopicCreate(d *schema.ResourceData, meta interface{}) 
 	resGroup := d.Get("resource_group_name").(string)
 
 	parameters := servicebus.TopicCreateOrUpdateParameters{
-		Name:            &name,
-		Location:        &location,
+		//Name:            &name,
+			Location:        &location,
 		TopicProperties: &servicebus.TopicProperties{},
 	}
 
@@ -183,7 +183,7 @@ func resourceArmServiceBusTopicRead(d *schema.ResourceData, meta interface{}) er
 	d.Set("name", resp.Name)
 	d.Set("resource_group_name", resGroup)
 	d.Set("namespace_name", namespaceName)
-	d.Set("location", azureRMNormalizeLocation(*resp.Location))
+	//d.Set("location", azureRMNormalizeLocation(*resp.Location))
 
 	props := resp.TopicProperties
 	d.Set("auto_delete_on_idle", props.AutoDeleteOnIdle)
