@@ -3,7 +3,7 @@
 FEATURES:
 
 * **New Data Source:** `aws_kms_alias` [#13669] (/../../issues/13669)
-* **New Data Source:** `google_compute_network` [#12442]
+* **New Data Source:** `google_compute_network` [#12442] (https://github.com/tchia04/terraform/issues/12442)
 * **New Data Source:** `google_compute_subnetwork` [GH-12442]
 * **New Resource:** `local_file` for creating local files (please see the docs for caveats) [GH-12757]
 * **New Resource:**  `alicloud_ess_scalinggroup` [GH-13731]
